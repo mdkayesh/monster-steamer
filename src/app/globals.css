@@ -102,7 +102,7 @@ body {
 
 .feedback.beforeAndAfter .swiper-button-next,
 .feedback.beforeAndAfter .swiper-button-prev {
-  @apply xl:hidden;
+  @apply xl:hidden border-dark-67blue;
 }
 
 .feedback.beforeAndAfter .swiper-pagination {

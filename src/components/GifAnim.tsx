@@ -67,6 +67,7 @@ const GifAnim = () => {
           height={1000}
           alt="jif"
           className="img object-cover w-0 h-full rounded-lg will-change-[width]"
+          priority={true}
         />
       </div>
     </div>

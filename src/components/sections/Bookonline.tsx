@@ -42,13 +42,14 @@ const Bookonline = () => {
           </Button>
 
           <div className="img relative">
-            <div className="bg-glowing absolute bottom-0 right-0 w-[300px] h-[300px] blur-[70px] rounded-full z-[-1]"></div>
+            <div className="bg-glowing absolute bottom-0 right-0 w-[300px] h-[300px] blur-[70px] rounded-full z-[-1] hidden lg:block"></div>
             <Image
               src="/van.png"
               alt="book online"
               width={956}
               height={500}
               className="pointer-events-none w-full"
+              priority={true}
             />
           </div>
         </div>

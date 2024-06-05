@@ -19,6 +19,7 @@ const Hero = () => {
                 height={150}
                 alt="glow"
                 className="rotate-[30deg]"
+                priority={true}
               />
             </div>
 

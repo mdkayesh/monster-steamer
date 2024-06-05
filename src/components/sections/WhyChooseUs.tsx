@@ -134,6 +134,7 @@ const WhyChooseUs = () => {
                     width={325}
                     height={226}
                     className="object-cover aspect-[3/2] max-w-[200px] xl:max-w-[300px] rounded-lg"
+                    priority={true}
                   />
                 </div>
               ))}
@@ -150,6 +151,7 @@ const WhyChooseUs = () => {
             width={1224}
             height={625}
             className="w-full rounded-xl"
+            priority={true}
           />
           <button
             title="Play"
