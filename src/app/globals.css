@@ -3,31 +3,116 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --primary-blue: #00CCF8;
+  --primary-white: #FFFFFF;
+  --light-7blue: #E2EFF2;
+  --light-11blue: #AFC0C4;
+  --light-12blue: #788588;
+  --light-27blue: #5B757D;
+  --dark-67blue: #153339;
+  --dark-100blue: #002932
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-primary-white text-light-27blue overflow-x-hidden max-w-full;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.bg-glowing {
+  background: rgb(210, 250, 255);
+  background: radial-gradient(circle, rgba(210, 250, 255, 1) 70%, rgba(127, 232, 255, 1) 90%);
+}
+
+
+.rotate-anim {
+  will-change: transform;
+  animation: rotate 6s ease-in-out 0.3s infinite alternate-reverse;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(90deg)
   }
+
+  to {
+    transform: rotate(0deg)
+  }
+}
+
+/* navbar */
+
+.navbar {
+  @apply bg-primary-white text-dark-67blue;
+}
+
+.navbar.dark-navbar {
+  @apply bg-dark-67blue text-light-7blue
+}
+
+.navbar .dropdown {
+  @apply bg-primary-white text-dark-67blue;
+}
+
+.navbar.dark-navbar .dropdown {
+  @apply bg-dark-100blue text-light-7blue
+}
+
+.navbar .arrow {
+  @apply text-dark-67blue transition-all duration-300
+}
+
+.navbar.dark-navbar .arrow {
+  @apply text-light-7blue
+}
+
+.navbar .logo {
+  @apply bg-[url('../../public/logo.png')] bg-center bg-cover bg-no-repeat;
+}
+
+.navbar.dark-navbar .logo {
+  @apply bg-[url('../../public/darklogo.png')];
+}
+
+
+/* swiper css style */
+
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev,
+.feedback .swiper-button-next,
+.feedback .swiper-button-prev {
+  @apply bottom-0 w-14 h-14 rounded-lg border after:text-lg after:text-light-11blue top-[calc(100%-35px)] lg:top-[calc(100%-40px)] hover:bg-primary-white hover:after:text-dark-100blue transition-all duration-300;
+}
+
+.mySwiper .swiper-button-prev,
+.feedback .swiper-button-prev {
+  @apply left-1/2 -translate-x-[110%] after:content-["prev"];
+}
+
+.mySwiper .swiper-button-next,
+.feedback .swiper-button-next {
+  @apply right-1/2 translate-x-[110%] after:content-["next"];
+}
+
+.mySwiper .swiper-button-prev {
+  @apply lg:mr-0 lg:translate-x-0 lg:left-0 after:content-["prev"];
+}
+
+.mySwiper .swiper-button-next {
+  @apply lg:left-16 lg:translate-x-0 lg:ml-1 after:content-["next"];
+}
+
+.feedback.beforeAndAfter .swiper-button-next,
+.feedback.beforeAndAfter .swiper-button-prev {
+  @apply xl:hidden;
+}
+
+.feedback.beforeAndAfter .swiper-pagination {
+  @apply hidden w-full xl:flex gap-6 px-5;
+}
+
+.feedback.beforeAndAfter .swiper-pagination-bullet {
+  @apply h-1 flex-1 block mb-4 rounded-lg bg-dark-100blue opacity-100;
+}
+
+.feedback.beforeAndAfter .swiper-pagination-bullet-active {
+  @apply bg-primary-blue;
 }
