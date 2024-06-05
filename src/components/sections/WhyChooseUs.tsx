@@ -48,7 +48,10 @@ const WhyChooseUs = () => {
           isMobile: "(max-width: 768px)",
         },
         (context) => {
-          const { isMobile, isDesktop } = context.conditions;
+          const { isMobile, isDesktop } = context.conditions as {
+            isMobile: boolean;
+            isDesktop: boolean;
+          };
 
           const tl = gsap.timeline({
             scrollTrigger: {

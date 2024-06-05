@@ -25,7 +25,10 @@ const GifAnim = () => {
           small: "(min-width: 1024px)",
         },
         (context) => {
-          const { large, medium } = context.conditions;
+          const { large, medium } = context.conditions as {
+            large: boolean;
+            medium: boolean;
+          };
 
           const x = large ? 710 : medium ? 630 : 550;
           const y = large ? 200 : medium ? 20 : 20;
